@@ -7,7 +7,7 @@ const MAX_ATELIER = 10;
 //------------------------------------------------------//
 const champcotisation = document.getElementById("cotisation");
 const CaretPosition = document.getElementById("carte");
-const nbAtelier = document.getElementById("nbatelier");
+const nbatelier = document.getElementById("nbatelier");
 const btnCalculer = document.getElementById("btnCalculer");
 const champatelier = document.getElementById("nbatelier");
 const adhNouveau = document.getElementById("adhnouveau");
@@ -23,24 +23,17 @@ const champMDP = document.getElementById("motdepasse");
 
 
 
-function name(params) {
-    let something = parseInt(nbAtelier.value);
-    if(Number.isNaN(nbatelier)||nbatelier<0|| nbAtelier>10){
-        alert("kys you fkng nigger");
+function calculerCotisation() {
+    let something = parseInt(nbatelier.value);
+    if(Number.isNaN(nbatelier)||nbatelier<0|| nbatelier>10){
+        alert("AZIZ YA KAHLOUUUUCH");
     }else{
-        let total = something * 8;
-    }
-
-    if (CaretPosition.checked) {
-        total += T_CARTE;
-    }
-
-    function calculerCotisation(){
-        const total = calculerCotisation();
-        if (total!=null) {
-            champcotisation.value = total;
-             }else {
-                champcotisation.value="";
-             }
+        //CONDITION ? valeur_si_vrai : valeur_si_faux
+        const base = adhNouveau.checked ? T_NOUV : T_RENOUV;
+        let total = base + nbAteliers * T_ATELIER;
+        if (CaretPosition.checked) {
+            total += T_CARTE;
+        }
+        return total;
     }
 }
