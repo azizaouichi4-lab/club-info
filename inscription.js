@@ -37,3 +37,15 @@ function calculerCotisation() {
         return total;
     }
 }
+function afficherCotisation(){
+    const total = calculerCotisation();
+    if(total != null){
+        champcotisation.value = total;
+    }else{
+        champcotisation.value = "";
+    }
+}
+
+if(btnCalculer){
+    btnCalculer.addEventListener("click" , afficherCotisation)
+}
