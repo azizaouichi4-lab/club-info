@@ -1,0 +1,82 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #F4F6F9;
+    margin: 0;
+}
+header{
+    background-color: #1f3a5f;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+h1{
+    font-size: 36px;
+}
+#slogan{
+    font-style: italic;
+    color: #a9c7f0;
+}
+nav{
+    background-color: #2c5282;
+    text-align: center;
+    padding: 10px ;
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav li{
+    display: inline;
+    margin: 15px;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+nav a:hover{
+    background-color: #1f3a5f;
+    border-radius: 4px;
+}
+main{
+    width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.section{
+    background-color: white;
+    border: 1px solid #d0d7e2;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+main img{
+    width: 100%;
+    display: block;
+    margin: 0;
+    border-radius: 8px;
+}
+footer{
+    background-color: #1f3a5f;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #d0d7e2;
+    padding: 10px;
+}
+th{
+    background-color:#2c5282;
+    color: white;
+}
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+tr:hover{
+    background-color: #e0e0e0;
+}

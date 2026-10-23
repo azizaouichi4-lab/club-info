@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inscription au club</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="inscription.css">
+  <script src="inscription.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <h1>Inscription au club</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <!-- ... vos autres pages du TP1 ... -->
+        <li><a href="inscription.html">Inscription</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <form id="formInscription" action="#" method="post">
+      <fieldset id="cadre">
+        <legend>Inscription au club</legend>
+
+        <!-- Ligne 1 : Nom / Prénom -->
+        <div class="ligne">
+          <div class="champ">
+            <label for="nom" class="obligatoire">Nom</label>
+            <input type="text" id="nom" name="nom" required minlength="2"
+                   pattern="[A-Za-zÀ-ÿ' \-]{2,}"
+                   placeholder="Entrez votre nom SVP"
+                   title="Lettres, espaces, apostrophes et tirets uniquement (2 caractères minimum)">
+          </div>
+          <div class="champ">
+            <label for="prenom" class="obligatoire">Prénom</label>
+            <input type="text" id="prenom" name="prenom" required minlength="2"
+                   placeholder="Entrez votre prénom SVP">
+          </div>
+        </div>
+
+        <!-- Ligne 2 : E-mail / Date de naissance -->
+        <div class="ligne">
+          <div class="champ">
+            <label for="email" class="obligatoire">E-mail</label>
+            <input type="email" id="email" name="email" required
+                   placeholder="contact@gmail.com"
+                   title="Adresse Gmail ou Outlook uniquement (ex. contact@gmail.com)">
+          </div>
+          <div class="champ">
+            <label for="naissance" class="A1 obligatoire">Date de naissance</label>
+            <input type="date" id="naissance" name="naissance" required
+                   min="1995-01-01" max="2009-12-31">
+          </div>
+        </div>
+
+        <!-- Ligne 3 : Mot de passe / Confirmation -->
+        <div class="ligne">
+          <div class="champ">
+            <label for="motdepasse" class="obligatoire">Mot de passe</label>
+            <input type="password" id="motdepasse" name="motdepasse" required minlength="6">
+          </div>
+          <div class="champ">
+            <label for="confirmation" class="obligatoire">Confirmer le mot de passe</label>
+            <input type="password" id="confirmation" name="confirmation" required minlength="6">
+          </div>
+        </div>
+
+        <!-- Ligne 4 : Niveau / Pôle -->
+        <div class="ligne">
+          <div class="champ">
+            <label for="niveau" class="A1 obligatoire">Niveau d'études</label>
+            <select id="niveau" name="niveau" required>
+              <option value="" disabled selected>-- Choisissez --</option>
+              <optgroup label="Licence">
+                <option value="L1">1ère année</option>
+                <option value="L2">2ème année</option>
+                <option value="L3">3ème année</option>
+              </optgroup>
+              <optgroup label="Master">
+                <option value="M1">1ère année</option>
+                <option value="M2">2ème année</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="champ">
+            <label for="pole" class="A1 obligatoire">Pôle souhaité</label>
+            <select id="pole" name="pole" required>
+              <option value="" disabled selected>-- Choisissez --</option>
+              <optgroup label="Technique">
+                <option value="web">Développement Web &amp; Mobile</option>
+                <option value="data">Data &amp; IA</option>
+                <option value="reseaux">Réseaux &amp; Cybersécurité</option>
+              </optgroup>
+              <optgroup label="Business">
+                <option value="marketing">Marketing digital &amp; E-commerce</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+
+        <!-- Type d'adhésion -->
+        <fieldset>
+          <legend class="A1">Type d'adhésion</legend>
+          <input type="radio" id="adhNouveau" name="adhesion" value="nouveau" checked>
+          <label for="adhNouveau">Nouveau membre</label>
+          <input type="radio" id="adhRenouv" name="adhesion" value="renouvellement">
+          <label for="adhRenouv">Renouvellement</label>
+        </fieldset>
+
+        <!-- Ateliers supplémentaires -->
+        <div class="champ">
+          <label for="nbAteliers" class="A2">Ateliers supplémentaires</label>
+          <input type="number" id="nbAteliers" name="nbAteliers" value="0" min="0" max="10">
+        </div>
+
+        <!-- Option -->
+        <div class="champ">
+          <span class="A2">Option</span>
+          <div>
+            <input type="checkbox" id="carte" name="carte" value="oui">
+            <label for="carte">Carte de membre imprimée (+5 DT)</label>
+          </div>
+        </div>
+
+        <!-- Centres d'intérêt -->
+        <fieldset>
+          <legend class="A1">Centres d'intérêt</legend>
+          <input type="checkbox" id="int1" name="interets" value="prog">
+          <label for="int1">Programmation</label>
+          <input type="checkbox" id="int2" name="interets" value="cyber">
+          <label for="int2">Cybersécurité</label>
+          <input type="checkbox" id="int3" name="interets" value="data">
+          <label for="int3">Data</label>
+          <input type="checkbox" id="int4" name="interets" value="marketing">
+          <label for="int4">Marketing digital</label>
+        </fieldset>
+
+        <div class="calcul">
+          <button type="button" id="btnCalculer" onclick="">Calculer</button>
+          <input type="text" id="cotisation" name="cotisation" readonly>
+          <span class="unite">DT</span>
+        </div>
+
+        <hr>
+        <p id="message"></p>
+
+        <div class="boutons">
+          <button type="submit">Envoyer</button>
+          <button type="reset">Annuler</button>
+        </div>
+
+      </fieldset>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; Club Informatique</p>
+  </footer>
+
+</body>
+</html>

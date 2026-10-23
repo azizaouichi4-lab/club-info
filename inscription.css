@@ -1,0 +1,111 @@
+#cadre {
+  width: 70%;
+  margin: 0 auto;
+  border: 2px solid #2C5282;
+  border-radius: 10px;
+  background-color: #EEF2F8;
+  padding: 20px;
+}
+
+#cadre > legend {
+  color: #2C5282;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#cadre fieldset {
+  border: 1px solid #B8C2D0;
+  border-radius: 4px;
+  margin: 15px 0;
+}
+
+input[type="text"],input[type="email"],
+input[type="password"],input[type="date"],
+input[type="number"],select 
+{
+  padding: 8px;
+  border: 1px solid #B8C2D0;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+#cotisation {
+  width: 90px;
+  text-align: right;
+  font-weight: bold;
+  color: #C00;
+}
+.unite {
+  font-weight: bold;
+  color: #C00;
+}
+
+/* Message d'erreur : invisible tant qu'il est vide */
+#message {
+  border: 1px solid red;
+  color: red;
+  padding: 8px;
+}
+#message:empty {
+  display: none;
+}
+
+button {
+  background-color: #2C5282;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 18px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #1A365D;
+}
+button[type="reset"] {
+  background-color: #718096;
+}
+button[type="reset"]:hover {
+  background-color: #4A5568;
+}
+
+
+.ligne {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.champ {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+.ligne .champ {
+  margin-bottom: 0;
+}
+
+.obligatoire::after {
+  content: " *";
+  color: red;
+}
+
+.reglement,.calcul,.boutons {
+  margin: 15px 0;
+}
+.boutons {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 700px) {
+  #cadre {
+    width: auto;
+  }
+  .ligne {
+    grid-template-columns: 1fr;
+  }
+}
